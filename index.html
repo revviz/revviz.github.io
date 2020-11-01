@@ -112,9 +112,9 @@ function prefill (){
   var loc = location.href;
   var locationField1 = document.getElementById('myInput1');
   var printout = document.getElementById('selection');
-  const var1 = loc.split('.io').pop();
+  const var1 = loc.split('.io/').pop();
   var part1 = var1.substring(
-      var1.lastIndexOf(".io") + 1, 
+      var1.lastIndexOf(".io/") + 1, 
       var1.lastIndexOf("")
   );
   part1 = part1.replace(/%20/g, " ");
