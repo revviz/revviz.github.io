@@ -126,7 +126,7 @@ function prefill (){
   printout.innerHTML = part1;
 }
 
-//filters rows according to input values
+// filters rows according to input values
 function myFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("myInput1");
@@ -134,7 +134,7 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   
-  //embedded code to calculate number of total rows in the table
+  // embedded code to calculate number of total rows in the table
   var totcounts = document.getElementById('totcount');
   var output = tr.length;
   totcounts.innerHTML = output;
@@ -157,19 +157,19 @@ function myFunction() {
   }
 }
 
-//creates a count of the number of rows shown in the filtered table
+// creates a count of the number of rows shown in the filtered table
 function UpdateCount () {
   var returnt = document.getElementById('rowscount');
   var totalRows = $('#myTable tr:not([style*="display: none"])').length;
   returnt.innerHTML = totalRows;
 }
 
-//not sure what this is doing... possibly delete
+// not sure what this is doing... possibly delete
 $("#container").on('click-row.bs.table', function (e, row, $element) {
     window.location = $element.data('href');
 });
 
-//activate all text in cells with 'https://' as hyperlinks
+// activate all text in cells with 'https://' as hyperlinks
   $('#myTable td').each(function(){
       // Get the content
       var str = $(this).html();
