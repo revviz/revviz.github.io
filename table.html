@@ -61,6 +61,7 @@ tr.header, tr:hover {
 
 
 <script>
+//loads in a local csv file called 'data.csv'
 var data;
 	$.ajax({
 	  type: "GET",  
@@ -72,8 +73,9 @@ var data;
 		generateHtmlTable(data);
 	  }   
 	});
-  
-  function generateHtmlTable(data) {
+
+//creates an HTML format table from the loaded data
+function generateHtmlTable(data) {
     var html = '<table  class="table table-condensed table-hover table-striped">';
 
       if(typeof(data[0]) === 'undefined') {
@@ -108,20 +110,7 @@ var data;
 	  }
 	}	
 
-$('#myTable').ready(function(){
-    // Get each div
-    $('.content').each(function(){
-        // Get the content
-        var str = $(this).html();
-        // Set the regex string
-        var regex = /(https?:\/\/([-\w\.]+)+(:\d+)?(\/([\w\/_\.]*(\?\S+)?)?)?)/ig
-        // Replace plain text links by hyperlinks
-        var replaced_text = str.replace(regex, "<a href='$1' target='_blank'>$1</a>");
-        // Echo link
-        $(this).html(replaced_text);
-    });
-});
-
+//extracts text from trailing end of URL and enters it into the filter
 function prefill (){
   var loc = location.href;
   var locationField1 = document.getElementById('myInput1');
@@ -137,6 +126,7 @@ function prefill (){
   printout.innerHTML = part1;
 }
 
+//filters rows according to input values
 function myFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("myInput1");
@@ -144,6 +134,7 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   
+  //embedded code to calculate number of total rows in the table
   var totcounts = document.getElementById('totcount');
   var output = tr.length;
   totcounts.innerHTML = output;
@@ -166,6 +157,7 @@ function myFunction() {
   }
 }
 
+//creates a count of the number of rows shown in the filtered table
 function UpdateCount () {
   var returnt = document.getElementById('rowscount');
   var totalRows = $('#myTable tr:not([style*="display: none"])').length;
