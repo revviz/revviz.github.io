@@ -122,8 +122,11 @@ function prefill (){
   );
   part1 = part1.replace(/%20/g, " ");
   part1 = part1.replace(/%2F/g, "/");
-  locationField1.value = part1;
-  printout.innerHTML = part1;
+  
+  if (part1 ==="") {
+    locationField1.value = part1;
+    printout.innerHTML = part1;
+  }
 }
 
 // filters rows according to input values
