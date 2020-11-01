@@ -123,10 +123,10 @@ function prefill (){
   part1 = part1.replace(/%20/g, " ");
   part1 = part1.replace(/%2F/g, "/");
   
-  if (part1 ==="") {
+  if (loc.includes("?s=")) {
     locationField1.value = part1;
     printout.innerHTML = part1;
-  }
+  } else {}
 }
 
 // filters rows according to input values
