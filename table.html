@@ -172,10 +172,12 @@ function UpdateCount () {
   returnt.innerHTML = totalRows;
 }
 
+//not sure what this is doing... possibly delete
 $("#container").on('click-row.bs.table', function (e, row, $element) {
     window.location = $element.data('href');
 });
 
+//activate all text in cells with 'https://' as hyperlinks
 $('#csv-display').ready(function(){
     // Get each div
     $('.content').each(function(){
