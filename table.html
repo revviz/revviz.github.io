@@ -61,7 +61,7 @@ tr.header, tr:hover {
 
 
 <script>
-//loads in a local csv file called 'data.csv'
+// loads in a local csv file called 'data.csv'
 var data;
 	$.ajax({
 	  type: "GET",  
@@ -74,9 +74,9 @@ var data;
 	  }   
 	});
 
-//creates an HTML format table from the loaded data
+// creates an HTML format table from the loaded data
 function generateHtmlTable(data) {
-    var html = '<table  class="table table-condensed table-hover table-striped">';
+    var html = '<table class="table table-condensed table-hover table-striped">';
 
       if(typeof(data[0]) === 'undefined') {
         return null;
@@ -110,7 +110,7 @@ function generateHtmlTable(data) {
 	  }
 	}	
 
-//extracts text from trailing end of URL and enters it into the filter
+// extracts text from trailing end of URL and enters it into the filter
 function prefill (){
   var loc = location.href;
   var locationField1 = document.getElementById('myInput1');
@@ -163,11 +163,6 @@ function UpdateCount () {
   var totalRows = $('#myTable tr:not([style*="display: none"])').length;
   returnt.innerHTML = totalRows;
 }
-
-// not sure what this is doing... possibly delete
-$("#container").on('click-row.bs.table', function (e, row, $element) {
-    window.location = $element.data('href');
-});
 
 // activate all text in cells with 'https://' as hyperlinks
   $('#myTable td').each(function(){
